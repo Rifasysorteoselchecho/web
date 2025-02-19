@@ -1,0 +1,555 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rifas el Checho</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <nav>
+      <div class="nav-left">
+        <div class="company-logo">
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#1a237e"/>
+                <stop offset="100%" style="stop-color:#0d47a1"/>
+              </linearGradient>
+            </defs>
+            <circle cx="32" cy="32" r="30" fill="url(#logoGradient)"/>
+            <text x="32" y="38" text-anchor="middle" fill="#fff" style="font-size: 12px; font-weight: bold;">CHECHO</text>
+            <g class="sparkles">
+              <circle cx="15" cy="15" r="2" fill="#ffd700">
+                <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="50" cy="20" r="2" fill="#ffd700">
+                <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="45" cy="50" r="2" fill="#ffd700">
+                <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite"/>
+              </circle>
+            </g>
+          </svg>
+        </div>
+        <button class="bank-card-btn">
+          <svg class="card-icon" viewBox="0 0 64 40" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#e31837"/>
+                <stop offset="100%" style="stop-color:#b50000"/>
+              </linearGradient>
+            </defs>
+            <rect x="2" y="2" width="60" height="36" rx="4" fill="url(#cardGradient)" stroke="#fff" stroke-width="2"/>
+            <rect x="6" y="8" width="10" height="8" fill="#FFD700"/>
+            <line x1="6" y1="24" x2="40" y2="24" stroke="#fff" stroke-width="2"/>
+            <line x1="6" y1="28" x2="30" y2="28" stroke="#fff" stroke-width="2"/>
+          </svg>
+        </button>
+      </div>
+      <div class="nav-right">
+        <a href="#home" class="nav-link">Inicio</a>
+        <button class="admin-gear-btn" id="admin-gear">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+        </button>
+        <a href="#" id="logout" class="nav-link"></a>
+      </div>
+    </nav>
+
+    <div id="home" class="page active">
+      <div class="raffle-info">
+        <div class="raffle-banner">
+          <h1>Gran Rifa 2024</h1>
+          <p class="raffle-date">Fecha del Sorteo: 14 de Febrero 2024</p>
+        </div>
+        <div class="raffle-details">
+          <div class="prize-info">
+            <h2>Premio Principal</h2>
+            <div class="prize-amount">$50,000</div>
+            <p class="prize-description">En efectivo</p>
+          </div>
+          <div class="raffle-rules">
+            <h3>Información del Sorteo</h3>
+            <ul>
+              <li>Precio por boleto: $100</li>
+              <li>Sorteo con base en la Lotería Nacional</li>
+              <li>El ganador será notificado vía telefónica</li>
+              <li>Entrega del premio en efectivo</li>
+            </ul>
+          </div>
+        </div>
+        <div class="raffle-image">
+          <img src="https://via.placeholder.com/800x400" alt="Imagen del Sorteo" id="raffle-display-image">
+        </div>
+      </div>
+
+      <div class="home-image-container">
+        <img src="https://via.placeholder.com/800x400" alt="Sistema de Administración" class="home-image">
+      </div>
+
+      <div class="lucky-machine">
+        <div class="lucky-machine-icon">
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="machineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#FF6B6B"/>
+                <stop offset="100%" style="stop-color:#FF4785"/>
+              </linearGradient>
+              <filter id="machineGlow">
+                <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+              <linearGradient id="starGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#FFD700"/>
+                <stop offset="100%" style="stop-color:#FFA500"/>
+              </linearGradient>
+            </defs>
+            <!-- Main Circle -->
+            <circle cx="32" cy="32" r="30" fill="url(#machineGradient)" filter="url(#machineGlow)"/>
+            
+            <!-- Decorative Ring -->
+            <circle cx="32" cy="32" r="25" fill="none" stroke="#FFD700" stroke-width="2" stroke-dasharray="4,4">
+              <animateTransform
+                attributeName="transform"
+                type="rotate"
+                from="0 32 32"
+                to="360 32 32"
+                dur="10s"
+                repeatCount="indefinite"/>
+            </circle>
+            
+            <!-- Lucky Symbols -->
+            <g transform="translate(32,32)">
+              <g id="symbols" filter="url(#machineGlow)">
+                <!-- Dollar Sign -->
+                <text x="-8" y="8" fill="#FFD700" style="font-size: 20px; font-weight: bold;">$</text>
+                <!-- Star -->
+                <path d="M 15,-5 L 17,2 24,2 18,7 20,14 15,10 10,14 12,7 6,2 13,2 Z" fill="url(#starGradient)">
+                  <animateTransform
+                    attributeName="transform"
+                    type="rotate"
+                    from="0 0 0"
+                    to="360 0 0"
+                    dur="5s"
+                    repeatCount="indefinite"/>
+                </path>
+              </g>
+            </g>
+            
+            <!-- Sparkles -->
+            <g class="sparkles" filter="url(#machineGlow)">
+              <circle cx="15" cy="15" r="2" fill="#FFD700">
+                <animate attributeName="r" values="1;3;1" dur="2s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="50" cy="20" r="2" fill="#FFD700">
+                <animate attributeName="r" values="2;4;2" dur="1.5s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="45" cy="50" r="2" fill="#FFD700">
+                <animate attributeName="r" values="1.5;3.5;1.5" dur="2.5s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite"/>
+              </circle>
+            </g>
+          </svg>
+        </div>
+        <h2>Máquina de la Suerte</h2>
+        <div class="lucky-machine-container">
+          <div class="lucky-machine-options">
+            <label for="lucky-quantity">Cantidad de tickets:</label>
+            <input type="number" id="lucky-quantity" name="lucky-quantity" min="1" max="10" value="1">
+          </div>
+          <button id="generate-ticket">¡Generar Ticket(s)!</button>
+          <div class="lucky-machine-results">
+            <!-- Lucky tickets will be displayed here -->
+          </div>
+          <div class="lucky-machine-total"></div>
+          <button id="reserve-ticket-lucky" class="reserve-ticket-btn" style="display: none;">Apartar Boleto</button>
+        </div>
+      </div>
+
+      <div id="tickets-section" class="config-section">
+        <h2>Boletos Disponibles</h2>
+        <div class="tickets-grid" id="tickets-grid"></div>
+        <div class="selected-tickets-container">
+          <h3>Boletos Seleccionados</h3>
+          <div id="selected-tickets" class="selected-tickets"></div>
+          <div id="total-amount" class="total-amount"></div>
+          <button id="reserve-ticket" class="reserve-ticket-btn">Apartar Boleto</button>
+        </div>
+      </div>
+
+      <div id="buyer-form-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2>Datos del Comprador</h2>
+          <form id="buyer-details-form">
+            <div class="form-group">
+              <label for="buyer-name">Nombre Completo:</label>
+              <input type="text" id="buyer-name" name="buyer-name" required placeholder="Ingrese el nombre">
+            </div>
+            <div class="form-group">
+              <label for="buyer-phone">Teléfono:</label>
+              <input type="tel" id="buyer-phone" name="buyer-phone" required pattern="[0-9]{10}" placeholder="Ingrese el teléfono">
+            </div>
+            <div class="form-group">
+              <label for="buyer-state">Estado:</label>
+              <select id="buyer-state" name="buyer-state" required>
+                <option value="">Seleccione un estado</option>
+                <option value="Aguascalientes">Aguascalientes</option>
+                <option value="Baja California">Baja California</option>
+                <option value="Baja California Sur">Baja California Sur</option>
+                <option value="Campeche">Campeche</option>
+                <option value="Chiapas">Chiapas</option>
+                <option value="Chihuahua">Chihuahua</option>
+                <option value="Ciudad de México">Ciudad de México</option>
+                <option value="Coahuila">Coahuila</option>
+                <option value="Colima">Colima</option>
+                <option value="Durango">Durango</option>
+                <option value="Guanajuato">Guanajuato</option>
+                <option value="Guerrero">Guerrero</option>
+                <option value="Hidalgo">Hidalgo</option>
+                <option value="Jalisco">Jalisco</option>
+                <option value="México">México</option>
+                <option value="Michoacán">Michoacán</option>
+                <option value="Morelos">Morelos</option>
+                <option value="Nayarit">Nayarit</option>
+                <option value="Nuevo León">Nuevo León</option>
+                <option value="Oaxaca">Oaxaca</option>
+                <option value="Puebla">Puebla</option>
+                <option value="Querétaro">Querétaro</option>
+                <option value="Quintana Roo">Quintana Roo</option>
+                <option value="San Luis Potosí">San Luis Potosí</option>
+                <option value="Sinaloa">Sinaloa</option>
+                <option value="Sonora">Sonora</option>
+                <option value="Tabasco">Tabasco</option>
+                <option value="Tamaulipas">Tamaulipas</option>
+                <option value="Tlaxcala">Tlaxcala</option>
+                <option value="Veracruz">Veracruz</option>
+                <option value="Yucatán">Yucatán</option>
+                <option value="Zacatecas">Zacatecas</option>
+              </select>
+            </div>
+            <button type="submit" class="confirm-reservation-btn">Confirmar Reserva</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="ticket-verification">
+        <h2> Verificador de Boletos</h2>
+        <input type="text" id="verify-ticket-number" placeholder="Ingrese número de boleto" 
+               maxlength="5" pattern="\d*">
+        <button id="verify-ticket-button">
+          <i class="fas fa-search"></i> Verificar
+        </button>
+        <div id="verification-result"></div>
+      </div>
+
+      <div class="faq-section">
+        <h2>Preguntas Frecuentes</h2>
+        <ul id="home-faq-list">
+          <!-- FAQ items will be dynamically added here -->
+        </ul>
+      </div>
+
+      <div class="privacy-notice">
+        <h2>Aviso de Privacidad</h2>
+        <div class="privacy-notice-content">
+          <p>En cumplimiento con la Ley Federal de Protección de Datos Personales en Posesión de Particulares, le informamos que los datos personales que usted nos proporciona serán utilizados únicamente para:</p>
+          <ul>
+            <li>Registro y control de boletos vendidos</li>
+            <li>Contacto con los compradores</li>
+            <li>Verificación de la autenticidad de los boletos</li>
+            <li>Envío de información relevante sobre el evento</li>
+          </ul>
+          <p>Sus datos personales no serán compartidos con terceros sin su consentimiento expreso. Usted tiene derecho a acceder, rectificar, cancelar u oponerse al tratamiento de sus datos personales.</p>
+          <p>Al realizar la compra de un boleto, usted acepta los términos de este aviso de privacidad.</p>
+          <button id="privacy-notice-btn">Leer aviso completo</button>
+        </div>
+      </div>
+
+      <div class="contact-info">
+        <h3>Contacto</h3>
+        <p>Para más información:</p>
+        <p>Tel: (627) 123-8729</p>
+        <p>WhatsApp: (627) 123-8729</p>
+        <p>Ubicación: Ciudad de México</p>
+      </div>
+    </div>
+
+    <div id="admin" class="page">
+      <h1>Panel de Administración</h1>
+      <div id="admin-actions">
+        <button id="user-management">Gestión de Usuarios</button>
+        <button id="config">Configuración</button>
+        <button id="admin-logout" class="logout-btn">Cerrar Sesión</button>
+      </div>
+      
+      <div id="ticket-management" class="config-section">
+        <h2>Gestión de Boletos</h2>
+        <div class="form-group">
+          <label for="ticket-quantity">Cantidad de Boletos a Vender (000-99999):</label>
+          <input type="number" id="ticket-quantity" name="ticket-quantity" min="0" max="99999" value="100">
+          <button id="generate-tickets-button">Generar Boletos</button>
+        </div>
+      </div>
+
+      <div id="faq-management" class="config-section">
+        <h2>Gestión de Preguntas Frecuentes</h2>
+        <form id="add-faq-form">
+          <label for="faq-question">Pregunta:</label>
+          <input type="text" id="faq-question" name="faq-question" required>
+          <label for="faq-answer">Respuesta:</label>
+          <textarea id="faq-answer" name="faq-answer" rows="4" required></textarea>
+          <button type="submit">Agregar Pregunta</button>
+        </form>
+        
+        <h3>Lista de Preguntas Frecuentes</h3>
+        <ul id="faq-list">
+          <!-- FAQ items will be dynamically added here -->
+        </ul>
+      </div>
+      
+      <div id="purchased-tickets-section" class="config-section">
+        <h2>Boletos Comprados</h2>
+        <table id="purchased-tickets-table">
+          <thead>
+            <tr>
+              <th>Número de Boleto</th>
+              <th>Nombre del Comprador</th>
+              <th>Teléfono</th>
+              <th>Estado</th>
+              <th>Fecha de Compra</th>
+              <th>Estado de Pago</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="purchased-tickets-body">
+            <!-- Tickets will be dynamically added here -->
+          </tbody>
+        </table>
+      </div>
+
+      <div id="raffle-info-config" class="config-section">
+        <h2>Configuración de Información del Sorteo</h2>
+        <form id="raffle-info-form">
+          <div class="form-group">
+            <label for="raffle-title">Título del Sorteo:</label>
+            <input type="text" id="raffle-title" name="raffle-title" required>
+          </div>
+          <div class="form-group">
+            <label for="raffle-date">Fecha del Sorteo:</label>
+            <input type="date" id="raffle-date" name="raffle-date" required>
+          </div>
+          <div class="form-group">
+            <label for="prize-amount">Monto del Premio:</label>
+            <input type="number" id="prize-amount" name="prize-amount" required>
+          </div>
+          <div class="form-group">
+            <label for="prize-description">Descripción del Premio:</label>
+            <input type="text" id="prize-description" name="prize-description" required>
+          </div>
+          <div class="form-group">
+            <label for="ticket-price">Precio por Boleto:</label>
+            <input type="number" id="ticket-price" name="ticket-price" required>
+          </div>
+          <div class="form-group">
+            <label for="raffle-basis">Base del Sorteo:</label>
+            <input type="text" id="raffle-basis" name="raffle-basis" required>
+          </div>
+          <div class="form-group">
+            <label for="prize-validity">Vigencia para Cobrar (días):</label>
+            <input type="number" id="prize-validity" name="prize-validity" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-phone">Teléfono de Contacto:</label>
+            <input type="tel" id="contact-phone" name="contact-phone" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-whatsapp">WhatsApp:</label>
+            <input type="tel" id="contact-whatsapp" name="contact-whatsapp" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-location">Ubicación:</label>
+            <input type="text" id="contact-location" name="contact-location" required>
+          </div>
+          <div class="form-group">
+            <label for="raffle-image">Imagen del Sorteo:</label>
+            <input type="file" id="raffle-image" name="raffle-image" accept="image/*">
+            <small>O introduce URL de imagen:</small>
+            <input type="text" id="raffle-image-url" name="raffle-image-url" placeholder="URL de la imagen">
+          </div>
+          <div class="form-group">
+            <h3>Configuración del Logo</h3>
+            <label for="logo-text">Texto del Logo:</label>
+            <input type="text" id="logo-text" name="logo-text" placeholder="Ej: CHECHO" value="CHECHO">
+            
+            <label for="logo-gradient-start">Color Inicial del Gradiente:</label>
+            <input type="color" id="logo-gradient-start" name="logo-gradient-start" value="#1a237e">
+            
+            <label for="logo-gradient-end">Color Final del Gradiente:</label>
+            <input type="color" id="logo-gradient-end" name="logo-gradient-end" value="#0d47a1">
+            
+            <label for="sparkle-color">Color de Destellos:</label>
+            <input type="color" id="sparkle-color" name="sparkle-color" value="#ffd700">
+          </div>
+          <button type="submit">Guardar Información del Sorteo</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="login" class="page">
+      <h2>Iniciar Sesión</h2>
+      <form id="login-form">
+        <input type="text" id="username" placeholder="Usuario" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+    </div>
+
+    <div id="verification-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="verification-result-content"></div>
+      </div>
+    </div>
+
+    <div id="admin-access-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Acceso de Administrador</h2>
+        <form id="admin-access-form">
+          <div class="form-group">
+            <label for="admin-username">Usuario:</label>
+            <input type="text" id="admin-username" name="admin-username" required placeholder="Ingrese usuario admin">
+          </div>
+          <div class="form-group">
+            <label for="admin-password">Contraseña:</label>
+            <input type="password" id="admin-password" name="admin-password" required placeholder="Ingrese contraseña">
+          </div>
+          <div class="admin-form-buttons">
+            <button type="submit" class="confirm-reservation-btn">Acceder</button>
+            <button type="button" class="back-btn" id="admin-back-btn">Volver</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="payment-modal" class="modal">
+      <div class="modal-content payment-modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Información de Pago</h2>
+        <div class="payment-info">
+          <div class="payment-card">
+            <div class="card-front">
+              <div class="chip"></div>
+              <div class="card-number-display">•••• •••• •••• ••••</div>
+              <div class="card-details">
+                <div class="card-holder">NOMBRE DEL TITULAR</div>
+                <div class="card-expiry">MM/YY</div>
+              </div>
+              <div class="bank-logo">BANORTE</div>
+            </div>
+          </div>
+          <form id="payment-form">
+            <div class="form-group">
+              <label for="card-holder">Nombre del Titular:</label>
+              <input type="text" id="card-holder" required placeholder="Como aparece en la tarjeta" readonly>
+            </div>
+            <div class="form-group">
+              <label for="card-number">Número de Tarjeta:</label>
+              <input type="text" id="card-number" required maxlength="19" placeholder="1234 5678 9012 3456" readonly>
+            </div>
+            <div class="card-extra-details">
+              <div class="form-group expiry-group">
+                <label for="card-expiry">Fecha de Expiración:</label>
+                <input type="text" id="card-expiry" required maxlength="5" placeholder="MM/YY" readonly>
+              </div>
+              <div class="form-group cvv-group">
+                <label for="card-cvv">CVV:</label>
+                <input type="text" id="card-cvv" required maxlength="4" placeholder="123" readonly>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="bank-name">Banco:</label>
+              <select id="bank-name" required disabled>
+                <option value="">Seleccione su banco</option>
+                <option value="BBVA">BBVA</option>
+                <option value="Santander">Santander</option>
+                <option value="Banorte">Banorte</option>
+                <option value="HSBC">HSBC</option>
+                <option value="Citibanamex">Citibanamex</option>
+                <option value="Scotiabank">Scotiabank</option>
+                <option value="Banco Azteca">Banco Azteca</option>
+                <option value="BanCoppel">BanCoppel</option>
+              </select>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="privacy-notice-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Aviso de Privacidad Completo</h2>
+        <div class="privacy-notice-full">
+          <h3>1. Responsable del tratamiento de sus datos personales</h3>
+          <p>Somos responsables de la protección y tratamiento de sus datos personales.</p>
+
+          <h3>2. Datos personales que recopilamos</h3>
+          <p>Los datos personales que recopilamos incluyen:</p>
+          <ul>
+            <li>Nombre completo</li>
+            <li>Número de teléfono</li>
+            <li>Estado de residencia</li>
+          </ul>
+
+          <h3>3. Finalidad del tratamiento de datos</h3>
+          <p>Sus datos serán utilizados para:</p>
+          <ul>
+            <li>Gestionar la venta y distribución de boletos</li>
+            <li>Mantener un registro de las transacciones realizadas</li>
+            <li>Comunicar información importante sobre el evento</li>
+            <li>Verificar la autenticidad de los boletos</li>
+            <li>Cumplir con obligaciones legales</li>
+          </ul>
+
+          <h3>4. Derechos ARCO</h3>
+          <p>Usted tiene derecho a:</p>
+          <ul>
+            <li>Acceder a sus datos personales</li>
+            <li>Rectificar sus datos cuando sean inexactos</li>
+            <li>Cancelar sus datos</li>
+            <li>Oponerse al tratamiento de sus datos</li>
+          </ul>
+
+          <h3>5. Seguridad</h3>
+          <p>Implementamos medidas de seguridad administrativas, técnicas y físicas para proteger sus datos personales contra daño, pérdida, alteración, destrucción o uso no autorizado.</p>
+
+          <h3>6. Cambios al aviso de privacidad</h3>
+          <p>Nos reservamos el derecho de efectuar modificaciones o actualizaciones al presente aviso de privacidad. Cualquier modificación será notificada a través de nuestra página web.</p>
+
+          <h3>7. Contacto</h3>
+          <p>Para ejercer sus derechos ARCO o para cualquier duda sobre este aviso de privacidad, puede contactarnos a través de los medios proporcionados en nuestra página web.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="footer">
+    <div class="copyright">
+      <span class="copyright-symbol">  </span>
+      <p>2024 Rifas el Checho. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
